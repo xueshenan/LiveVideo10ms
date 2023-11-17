@@ -43,7 +43,7 @@ static void h264_configureAMediaFormat(KeyFrameFinder& kff,AMediaFormat* format)
     //AVCProfileBaseline==1
     //AMediaFormat_setInt32(decoder.format,AMEDIAFORMAT_KEY_PROFILE,1);
     //AMediaFormat_setInt32(decoder.format,AMEDIAFORMAT_KEY_PRIORITY,0);
-    //writeAndroidPerformanceParams(format);
+    writeAndroidPerformanceParams(format);
 }
 static void h265_configureAMediaFormat(KeyFrameFinder& kff,AMediaFormat* format){
     std::vector<uint8_t> buff={};
@@ -59,7 +59,7 @@ static void h265_configureAMediaFormat(KeyFrameFinder& kff,AMediaFormat* format)
     AMediaFormat_setInt32(format,AMEDIAFORMAT_KEY_HEIGHT,videoWH[1]);
     AMediaFormat_setBuffer(format,"csd-0",buff.data(),buff.size());
     MLOGD<<"Video WH:"<<videoWH[0]<<" H:"<<videoWH[1];
-    //writeAndroidPerformanceParams(format);
+    writeAndroidPerformanceParams(format);
 }
 
 #endif //LIVEVIDEO10MS_ANDOROIDMEDIAFORMATHELPER_H

@@ -89,7 +89,7 @@ public class RequestPermissionHelper implements ActivityCompat.OnRequestPermissi
                 // If we land here something went wrong - crash so I see it in the console
                 // I do not expect that to happen
                 Toast.makeText(activity,"Essential permissions not granted",Toast.LENGTH_LONG).show();
-                throw new RuntimeException(TAG+"Permissions not granted");
+//                throw new RuntimeException(TAG+"Permissions not granted");
             }
         }
     }

@@ -65,15 +65,15 @@ public class RequestPermissionHelper implements ActivityCompat.OnRequestPermissi
                 missingPermission.add(permission);
             }
         }
-        if(missingPermission.isEmpty()){
+        if (missingPermission.isEmpty()) {
             // All permissions are granted - notify if needed
             if(iOnPermissionsGranted!=null)iOnPermissionsGranted.onPermissionsGranted();
-        }else{
+        } else {
             nRequests++;
-            if(nRequests==1){
+            if (nRequests == 1) {
                 // First time just request permissions
                 requestMissingPermissions();
-            }else if(nRequests==2 || nRequests==3){
+            } else if (nRequests == 2) {
                 // Second and third time use alert dialog to show severity
                 AlertDialog.Builder builder = new AlertDialog.Builder(activity);
                 builder.setCancelable(false);
